@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+{% block sidebar %}
+<ul>
+    <i><a href="/lists/">Cancel</a></i>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<form action="/add_list/" method="post">{% csrf_token %}
+<ul>
+{{form.as_ul}}
+</ul>
+<input type="submit" name="submit" value="Create List">
+</form>
+
+{% endblock %}
