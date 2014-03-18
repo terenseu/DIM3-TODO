@@ -1,0 +1,30 @@
+
+<html>
+<body>
+
+	<h1>Lists</h1>
+{% block sidebar %}
+    <a href="/add_list/">Create A List!</a>
+{% endblock %}
+
+{% if lists.count > 0 %}
+
+{% for list in lists %}
+<div>
+TEST
+<h2><a href="{{ list.id }}/{{ list.url }}">{{list.list_name}}</a></h2>
+<ul>
+
+    <li>Group: {{list.group}}</li>
+    <li>Owner: {{list.owner}}</li>
+</ul>
+<p>Click <a href="/accounts/logout/">Here</a> to logout.</p>
+</div>
+{% endfor %}
+{% else %}
+<p>There are no lists!</p>
+    <p>Click <a href="/accounts/logout/">Here</a> to logout.</p>
+{% endif %}
+
+</body>
+</html>
