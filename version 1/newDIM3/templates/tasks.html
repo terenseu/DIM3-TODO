@@ -1,0 +1,28 @@
+<html>
+<body>
+	<h1>Tasks</h1>
+{% block sidebar %}
+    <a href="/create/">Create A Task!</a>
+{% endblock %}
+{% if tasks.count > 0 %}
+
+{% for task in tasks %}
+<div>
+<h2>{{task.name}}</h2>
+<p>{{task.created}}  </p>
+<ul>
+
+    <li>Difficulty: {{task.difficulty}}</li>
+    <li>Priority: {{task.priority}}</li>
+    <li>Done: {{task.done}}</li>
+    <li>User: {{task.user}}</li>
+</ul>
+
+</div>
+{% endfor %}
+{% else %}
+<p>There are no tasks!</p>
+{% endif %}
+
+</body>
+</html>	
