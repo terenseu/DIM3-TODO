@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List {{ list_name }}</title>
+    </head>
+
+    <body>
+    {% block sidebar %}
+    <a href="/{{ list.id }}/{{ list.url }}/add_task/">Create A Task!</a>
+{% endblock %}
+
+
+        {% if list %}
+            {% if tasks %}
+            <ul>
+                {% for task in tasks %}
+                <li>{{ page.task_name }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pages currently in category.</strong>
+            {% endif %}
+        {% else %}
+            The specified category {{ list_name }} does not exist!
+        {% endif %}
+    </body>
+</html>
